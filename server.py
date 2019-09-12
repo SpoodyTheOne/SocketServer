@@ -52,7 +52,7 @@ def sendAll(msg):
 
 buf = 1048576
 host = "0.0.0.0" # set to IP address of target computer
-port = 4242
+port = 443
 addr = (host,port)
 UDPSock = socket(AF_INET, SOCK_DGRAM)
 UDPSock.bind(addr)
