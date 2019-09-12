@@ -7,6 +7,8 @@ from cryptography.hazmat.primitives.asymmetric import padding
 import os
 import time
 
+print(gethostbyname(gethostname()))
+
 private_key = rsa.generate_private_key(
     public_exponent=65537,
     key_size=2048,
@@ -52,10 +54,12 @@ def sendAll(msg):
 
 buf = 1048576
 host = "0.0.0.0" # set to IP address of target computer
-port = 443
+port = int(os.environ.get('PORT', 17995))
 addr = (host,port)
 UDPSock = socket(AF_INET, SOCK_DGRAM)
 UDPSock.bind(addr)
+
+print(port)
 
 host2 = "" # set to IP address of target computer
 port2 = 1412
